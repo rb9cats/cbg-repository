@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Cherry Branch Gallery</title>
+  </head>
+  <body>
+    <div style="margin-left: 600px;">&nbsp;&nbsp;&nbsp;&nbsp;
+      <%#if params[:action] != 'main' and !params[:controller] != 'artist'%>
+        <%= link_to "Dashboard", :action => 'main',:controller => "artist"  %>
+      <%#end%>
+      <%if !session[:user_id] and !session[:admin_user_id] %>
+        <%= link_to "User", :action => 'index',:controller => "user"  %>
+        <%= link_to "Admin", :action => 'index',:controller => "admin_user"  %>
+      <%end%>
+      <%if session[:admin_user_id] %>
+        <%= link_to "Users", :action => 'member_index',:controller => "admin_user"  %>
+        <%= link_to "Artists", :action => 'artists_index',:controller => "admin_user"  %>
+        <%#= link_to "Transaction", :action => 'index',:controller => "admin_user"  %>
+        <%= link_to "Logout", :action => 'logout',:controller => "admin_user" %>
+      <%end%>
+      <% if session[:user_id] %>
+        <%= link_to "Edit Profile",:controller =>"user", :action => "edit_profile",:id => session[:user_id] %>
+        <%= link_to "Logout", :action => 'logout',:controller => "user" %>
+      <%end%>
+    </div>
+    <%if flash[:messgae]%><div style ="color:red;margin-top: 200px;"> <%=  flash[:messgae]%><%flash.clear%></div><%end%>
+    <%= yield %>
+  </body>
+</html>

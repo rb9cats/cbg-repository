@@ -1,0 +1,292 @@
+-- MySQL dump 10.13  Distrib 5.1.41, for debian-linux-gnu (i486)
+--
+-- Host: localhost    Database: test_db
+-- ------------------------------------------------------
+-- Server version	5.1.41-3ubuntu12.10
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `administrators`
+--
+
+DROP TABLE IF EXISTS `administrators`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `administrators` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `active` tinyint(1) DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `administrators`
+--
+
+LOCK TABLES `administrators` WRITE;
+/*!40000 ALTER TABLE `administrators` DISABLE KEYS */;
+INSERT INTO `administrators` VALUES (1,'admin','admin','admin@dckap.com','admin@dckap.com','2cfd6da09fc84a682507fbe40229a166eb5de748',1,'2011-09-15 09:49:07','2011-09-15 09:49:07');
+/*!40000 ALTER TABLE `administrators` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `artist_image_lists`
+--
+
+DROP TABLE IF EXISTS `artist_image_lists`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `artist_image_lists` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_code` varchar(30) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `file_name` varchar(300) DEFAULT NULL,
+  `image_type_id` int(11) DEFAULT NULL,
+  `artist_image_id` int(11) DEFAULT NULL,
+  `active` tinyint(1) DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=652 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `artist_image_lists`
+--
+
+LOCK TABLES `artist_image_lists` WRITE;
+/*!40000 ALTER TABLE `artist_image_lists` DISABLE KEYS */;
+INSERT INTO `artist_image_lists` VALUES (578,'492',6,'images_013.jpeg',1,220,1,'2011-11-28 13:17:00','2011-11-28 13:17:00'),(579,'441',7,'images_020.jpeg',2,220,1,'2011-11-28 13:17:00','2011-11-28 13:17:00'),(580,'869',8,'images_021.jpeg',3,220,1,'2011-11-28 13:17:00','2011-11-28 13:17:00'),(599,'511',5,'images_018.jpeg',1,224,1,'2011-11-29 05:00:54','2011-11-29 05:00:54'),(600,'45',6,'images_024.jpeg',2,224,1,'2011-11-29 05:00:54','2011-11-29 05:00:54'),(601,'914',7,'images_021.jpeg',3,224,1,'2011-11-29 05:00:54','2011-11-29 05:00:54'),(605,'574',4,'images_017.jpeg',1,225,1,'2011-11-29 05:02:19','2011-11-29 05:02:19'),(606,'459',5,'pool.jpg',2,225,1,'2011-11-29 05:02:19','2011-11-29 05:02:19'),(607,'337',6,'images_024.jpeg',3,225,1,'2011-11-29 05:02:19','2011-11-29 05:02:19'),(608,'988',4,'images_016.jpeg',1,226,1,'2011-11-29 05:02:57','2011-11-29 05:02:57'),(609,'603',4,'images_010.jpeg',2,226,1,'2011-11-29 05:02:57','2011-11-29 05:02:57'),(610,'570',4,'images_026.jpeg',3,226,1,'2011-11-29 05:02:57','2011-11-29 05:02:57'),(611,'724',2,'08-mother-rests-with-cub-670.j',1,227,1,'2011-11-29 05:30:39','2011-11-29 05:30:39'),(612,'967',4,'sample-testing-for-long-name-i',3,227,1,'2011-11-29 05:30:39','2011-11-29 05:30:39'),(613,'911',5,'sample-testing-for-long-name-i',1,228,1,'2011-11-29 05:31:10','2011-11-29 05:31:10'),(614,'920',6,'4.jpg',2,228,1,'2011-11-29 05:31:10','2011-11-29 05:31:10'),(615,'136',7,'5.jpg',3,228,1,'2011-11-29 05:31:11','2011-11-29 05:31:11'),(616,'124',4,'images_012.jpeg',1,229,1,'2011-11-29 09:14:43','2011-11-29 09:14:43'),(617,'226',5,'images_024.jpeg',2,229,1,'2011-11-29 09:14:43','2011-11-29 09:14:43'),(618,'887',6,'images_021.jpeg',3,229,1,'2011-11-29 09:14:43','2011-11-29 09:14:43'),(619,'387',4,'images_011.jpeg',1,230,1,'2011-11-29 09:15:17','2011-11-29 09:15:17'),(620,'766',5,'images_014.jpeg',2,230,1,'2011-11-29 09:15:17','2011-11-29 09:15:17'),(621,'636',6,'images_037.jpeg',3,230,1,'2011-11-29 09:15:17','2011-11-29 09:15:17'),(622,'948',10,'werewolf-1024x768_0.jpeg',1,231,1,'2011-11-29 10:13:28','2011-11-29 10:13:28'),(623,'5',20,'4.jpg',3,231,1,'2011-11-29 10:13:28','2011-11-29 10:13:28'),(627,'5',3,'images_012.jpeg',1,232,1,'2011-11-29 11:19:52','2011-11-29 11:19:52'),(628,'100',4,'sample-testing-for-long-name-image.jpg',2,232,1,'2011-11-29 11:19:52','2011-11-29 11:19:52'),(629,'736',5,'images_013.jpeg',3,232,1,'2011-11-29 11:19:52','2011-11-29 11:19:52'),(630,'499',5,'images_012.jpeg',1,221,1,'2011-11-29 11:21:30','2011-11-29 11:21:30'),(631,'594',6,'sample-testing-for-long-name-image.jpg',2,221,1,'2011-11-29 11:21:30','2011-11-29 11:21:30'),(632,'448',7,'images_012.jpeg',3,221,1,'2011-11-29 11:21:30','2011-11-29 11:21:30'),(633,'885',5,'sample-testing-for-long-name-image.2.jpg',1,233,1,'2011-11-29 11:30:24','2011-11-29 11:30:24'),(634,'393',6,'fkasdjhfkasdhjf_fldkjfj_asdfjk.png',2,233,1,'2011-11-29 11:30:24','2011-11-29 11:30:24'),(635,'201',7,'sample-testing-for-long-name-image.2.jpg',3,233,1,'2011-11-29 11:30:24','2011-11-29 11:30:24'),(636,'772',10,'10.jpg',1,234,1,'2011-11-29 11:41:13','2011-11-29 11:41:13'),(637,'405',20,'sample-testing-for-long-name-image.jpg',2,234,1,'2011-11-29 11:41:13','2011-11-29 11:41:13'),(638,'324',30,'7.jpg',3,234,1,'2011-11-29 11:41:13','2011-11-29 11:41:13'),(639,'470',6,'images_020.jpeg',3,235,1,'2011-11-29 12:49:32','2011-11-29 12:49:32'),(640,'986',7,'images_013.jpeg',1,236,1,'2011-11-29 12:50:12','2011-11-29 12:50:12'),(641,'31',8,'images_028.jpeg',2,236,1,'2011-11-29 12:50:12','2011-11-29 12:50:12'),(642,'8',9,'images_021.jpeg',3,236,1,'2011-11-29 12:50:12','2011-11-29 12:50:12'),(646,'653',5,'images_012.jpeg',1,237,1,'2011-11-30 06:36:39','2011-11-30 06:36:39'),(647,'585',5,'sample-testing-for-long-name-image.jpg',2,237,1,'2011-11-30 06:36:39','2011-11-30 06:36:39'),(648,'687',5,'08-mother-rests-with-cub-670.jpg',3,237,1,'2011-11-30 06:36:40','2011-11-30 06:36:40'),(649,'546',10,'10.jpg',1,238,1,'2011-12-05 06:29:44','2011-12-05 06:29:44'),(650,'263',20,'11.jpg',2,238,1,'2011-12-05 06:29:44','2011-12-05 06:29:44'),(651,'881',30,'13.jpg',3,238,1,'2011-12-05 06:29:44','2011-12-05 06:29:44');
+/*!40000 ALTER TABLE `artist_image_lists` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `artist_images`
+--
+
+DROP TABLE IF EXISTS `artist_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `artist_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `description` tinytext NOT NULL,
+  `artist_id` int(11) DEFAULT NULL,
+  `active` tinyint(1) DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=239 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `artist_images`
+--
+
+LOCK TABLES `artist_images` WRITE;
+/*!40000 ALTER TABLE `artist_images` DISABLE KEYS */;
+INSERT INTO `artist_images` VALUES (220,'asdfsdfa','asdf',109,1,'2011-11-28 13:16:38','2011-11-28 13:16:38'),(221,'Sample-1','sample testing for uploading',110,1,'2011-11-29 04:39:13','2011-11-29 04:39:13'),(224,'fd','dfg',109,1,'2011-11-29 05:00:54','2011-11-29 05:00:54'),(225,'asdfsdfa','sdf',112,1,'2011-11-29 05:02:18','2011-11-29 05:02:18'),(226,'sdfa','safd',113,1,'2011-11-29 05:02:57','2011-11-29 05:02:57'),(227,'sample-test-for-long-name','',112,1,'2011-11-29 05:30:38','2011-11-29 05:30:38'),(228,'sample-test-for-long-name','',112,1,'2011-11-29 05:31:10','2011-11-29 05:31:10'),(229,'dfgs','fdsg',114,1,'2011-11-29 09:14:43','2011-11-29 09:14:43'),(230,'sa','as',115,1,'2011-11-29 09:15:16','2011-11-29 09:15:16'),(231,'sample-2','',116,1,'2011-11-29 10:13:27','2011-11-29 10:13:27'),(232,'sdfg','dsgf',116,1,'2011-11-29 11:16:47','2011-11-29 11:16:47'),(233,'sdf','sdf',117,1,'2011-11-29 11:30:24','2011-11-29 11:30:24'),(234,'','',110,1,'2011-11-29 11:41:13','2011-11-29 11:41:13'),(235,'sdf','sdf',118,1,'2011-11-29 12:49:32','2011-11-29 12:49:32'),(236,'sdf','sdf',118,1,'2011-11-29 12:50:11','2011-11-29 12:50:11'),(237,'Sample-3','sample-testing',119,1,'2011-11-30 04:59:06','2011-11-30 04:59:06'),(238,'add image','sample-testing-for-add-image & update image',119,1,'2011-12-05 06:29:44','2011-12-05 06:29:44');
+/*!40000 ALTER TABLE `artist_images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `artists`
+--
+
+DROP TABLE IF EXISTS `artists`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `artists` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `description` tinytext,
+  `active` tinyint(1) DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `artists`
+--
+
+LOCK TABLES `artists` WRITE;
+/*!40000 ALTER TABLE `artists` DISABLE KEYS */;
+INSERT INTO `artists` VALUES (109,'raghu-sample','asdf',0,'2011-11-28 13:16:23','2011-11-29 07:55:22'),(110,'Siva-testing','Sample testing',1,'2011-11-29 04:38:07','2011-11-29 07:22:22'),(112,'salman','as',0,'2011-11-29 05:01:59','2011-11-29 05:56:20'),(113,'manison','sdf',0,'2011-11-29 05:02:40','2011-11-29 07:55:13'),(114,'sample-for-artist','dsgf',1,'2011-11-29 05:44:19','2011-11-29 11:44:34'),(115,'sekhar','dsgffff',0,'2011-11-29 06:32:12','2011-11-30 09:21:52'),(116,'ala','lal',0,'2011-11-29 10:12:35','2011-11-29 11:38:49'),(117,'thiru','sample-1',1,'2011-11-29 11:29:08','2011-12-05 11:24:20'),(118,'srinu','lsadf',0,'2011-11-29 12:49:10','2011-11-29 13:28:04'),(119,'sample-3','sample for testing-change',1,'2011-11-30 04:57:31','2011-11-30 04:59:31'),(120,'testing-5','',1,'2011-12-05 12:30:35','2011-12-05 12:30:35'),(121,'testing-5','testing-for-creation-artist',1,'2011-12-05 12:30:54','2011-12-05 12:30:54');
+/*!40000 ALTER TABLE `artists` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `image_type_lists`
+--
+
+DROP TABLE IF EXISTS `image_type_lists`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `image_type_lists` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) DEFAULT NULL,
+  `description` tinytext,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image_type_lists`
+--
+
+LOCK TABLES `image_type_lists` WRITE;
+/*!40000 ALTER TABLE `image_type_lists` DISABLE KEYS */;
+INSERT INTO `image_type_lists` VALUES (1,'Small','100*200 size Images','2011-09-16 07:33:32','2011-09-16 07:34:25'),(2,'Medium','300*200  size Images','2011-09-16 07:36:42','2011-09-16 07:36:42'),(3,'Large','500*200 size Images ','2011-09-16 07:37:25','2011-09-16 07:37:25');
+/*!40000 ALTER TABLE `image_type_lists` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order_transactions`
+--
+
+DROP TABLE IF EXISTS `order_transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order_transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) DEFAULT NULL,
+  `image_type` varchar(255) DEFAULT NULL,
+  `artist_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_transactions`
+--
+
+LOCK TABLES `order_transactions` WRITE;
+/*!40000 ALTER TABLE `order_transactions` DISABLE KEYS */;
+INSERT INTO `order_transactions` VALUES (50,52,'Medium',109,'2011-11-28 13:18:01','2011-11-28 13:18:01'),(51,52,'Large',109,'2011-11-28 13:18:01','2011-11-28 13:18:01'),(52,53,'Medium',112,'2011-11-29 05:07:22','2011-11-29 05:07:22'),(53,53,'Large',112,'2011-11-29 05:07:22','2011-11-29 05:07:22'),(54,54,'Large',109,'2011-11-29 13:01:50','2011-11-29 13:01:50'),(55,55,'Small',119,'2011-11-30 05:10:15','2011-11-30 05:10:15'),(56,56,'Large',117,'2011-11-30 05:12:40','2011-11-30 05:12:40'),(57,57,'Medium',114,'2011-11-30 05:19:34','2011-11-30 05:19:34'),(58,58,'Large',109,'2011-11-30 05:20:31','2011-11-30 05:20:31'),(59,59,'Medium',113,'2011-11-30 05:23:42','2011-11-30 05:23:42'),(60,60,'Medium',110,'2011-11-30 09:18:56','2011-11-30 09:18:56'),(61,61,'Medium',109,'2011-11-30 09:24:24','2011-11-30 09:24:24'),(62,61,'Large',109,'2011-11-30 09:24:24','2011-11-30 09:24:24');
+/*!40000 ALTER TABLE `order_transactions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `card_type` varchar(255) DEFAULT NULL,
+  `card_expires_on` varchar(255) DEFAULT NULL,
+  `transaction_id` varchar(255) DEFAULT NULL,
+  `artist_id` int(11) DEFAULT NULL,
+  `artist_image_name` varchar(255) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `total_price` decimal(10,0) DEFAULT NULL,
+  `success` tinyint(1) DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (52,'ala','ramana','visa','2018','2166721878',109,'asdfsdfa',50,'15',1,'2011-11-28 13:18:01','2011-11-28 13:18:01'),(53,'ala','ramana','visa','2018','2166739968',112,'asdfsdfa',50,'11',1,'2011-11-29 05:07:21','2011-11-29 05:07:22'),(54,'ala','ramana','visa','2019','2166754910',109,'fd',50,'7',1,'2011-11-29 13:01:50','2011-11-29 13:01:50'),(55,'Siva','Elango','visa','2012','2166791443',119,'Sample-3',53,'100',1,'2011-11-30 05:10:15','2011-11-30 05:10:15'),(56,'Siva','Elango','master','2019','2166791487',117,'sdf',53,'7',1,'2011-11-30 05:12:40','2011-11-30 05:12:40'),(57,'Siva','Elango','discover','2021','2166791545',114,'dfgs',54,'5',1,'2011-11-30 05:19:34','2011-11-30 05:19:34'),(58,'Shai','Siva','american_express','2013','2166791567',109,'asdfsdfa',54,'8',1,'2011-11-30 05:20:31','2011-11-30 05:20:31'),(59,'shai','ram','visa','2012','2166791591',113,'sdfa',54,'4',1,'2011-11-30 05:23:42','2011-11-30 05:23:42'),(60,'Siva','Elango','visa','2012','2166796774',110,'Sample-1',51,'6',1,'2011-11-30 09:18:56','2011-11-30 09:18:56'),(61,'aaa','aaa','visa','2012','2166796911',109,'asdfsdfa',51,'15',1,'2011-11-30 09:24:24','2011-11-30 09:24:24');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_migrations`
+--
+
+DROP TABLE IF EXISTS `schema_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_migrations` (
+  `version` varchar(255) NOT NULL,
+  UNIQUE KEY `unique_schema_migrations` (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `schema_migrations`
+--
+
+LOCK TABLES `schema_migrations` WRITE;
+/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
+INSERT INTO `schema_migrations` VALUES ('20110914071414'),('20110914113738'),('20110915044601'),('20110915075538'),('20110915075628'),('20110915075644'),('20110915075700'),('20110915075721'),('20111017064845'),('20111018130539');
+/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `activation_code` varchar(255) DEFAULT NULL,
+  `activated_at` datetime DEFAULT NULL,
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (50,'ala','ramana','alaramanaiah@dckap.com','sdf','d2f5490f50f0867d1400c9f5b4f45eace3bcb89a','2011-11-08 09:33:43','2011-12-12 12:44:27','','2011-11-08 09:33:43',1),(51,'Siva','dckap','sampletesting4@gmail.com','sivaelango','6d685f2ff61125205726f9a6362b8edc0886f352','2011-11-28 05:09:41','2011-11-29 11:42:55',NULL,'2011-11-28 05:14:59',1),(53,'sample','testing','sivaelangop@dckap.com','sample','6d685f2ff61125205726f9a6362b8edc0886f352','2011-11-28 06:30:22','2011-11-29 10:07:55',NULL,'2011-11-28 06:31:33',1),(54,'Siva','Elango','sampletesting6@gmail.com','Siva','6d685f2ff61125205726f9a6362b8edc0886f352','2011-11-30 05:16:41','2011-11-30 05:17:12',NULL,'2011-11-30 05:17:12',1);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-12-12 19:06:01

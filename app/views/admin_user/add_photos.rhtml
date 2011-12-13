@@ -1,0 +1,95 @@
+<!--menu content-->
+<!--end profile menu--><!--center-->
+<script type ="text/javascript">
+  function validation()
+  {
+    var chks = document.getElementsByName('artist_image_list[price][]');
+    var fns = document.getElementsByName('artist_image_list[file_name][]');
+    var anum = /(^\d+$)|(^\d+\.\d+$)/
+    for (var j =0;j< fns.length;j++)
+    {
+      if (fns[j].value=="")
+      {
+        document.getElementById("filen"+j+"").innerHTML = "Please upload an image";
+        fns[j].focus();
+        return false;
+      }
+      else
+      {
+        document.getElementById("filen"+j+"").innerHTML = "";
+      }
+    }
+    for (var i = 0; i < chks.length; i++)
+    {
+      if (chks[i].value=="")
+      {
+        document.getElementById("price"+i+"").innerHTML = "Please enter Price";
+        chks[i].focus();
+        return false;
+      }
+      else if (!anum.test(chks[i].value))
+      {
+        document.getElementById("price"+i+"").innerHTML = "Please enter Numeric value";
+        chks[i].focus();
+        return false;
+      }
+      else
+      {
+        document.getElementById("price"+i+"").innerHTML = "";
+      }
+    }
+
+    
+  }
+</script>
+
+<div>
+  <div ></div>
+  <div>
+    <h1><%= "Upload photos" %></h1>
+  </div>
+  <div class="empty"></div>
+  <div class="photo-contanier">
+    <div class="a-left" style="padding-bottom:10px; "><%= "You can upload multiple JPG, GIF, or PNG files" %>.</div>
+    <% if flash[:album_photo_error]%><div style="color:#ff0000;margin-right:55px;padding-bottom:10px; " id="errmsg" align="center">*<%= flash[:album_photo_error] %> .</div><% end %>
+    <div class="empty"></div>
+    <div class="listheading">
+      <%= @artist.name %>
+    </div>
+<%# form_for :artist_image_list, @artist_image_list, :url => {:action => 'add_photos', :artist_id => @artist.id} do |u| %>
+    <% form_tag({:action => 'add_photos', :artist_id => @artist.id}, {:multipart => true,:onSubmit =>"return validation();"}) do-%>
+      <%= error_messages_for :artist_image_list , :header_message => "", :message => "" %>
+      <div style ="width:800px; height: 400px;margin-left: 200px;">
+        <div><ul style ="list-style-type: none;">
+            <li> Title:     <%= text_field :artist_image, :name %></li><br/>
+            <li> Description:<%= text_area :artist_image, :description,:rows => "2", :cols =>"27"  %></li><br/>
+          </ul>
+        </div>
+        <div id="photohead" style="margin-right:55px;">
+          <caption title="Upload Photo">Upload Photo</caption>
+          <div style="clear:both;border: 2px solid black">
+            <ul style ="list-style-type: none;">
+
+  <li>SmallImage<%= file_field_tag "artist_image_list[file_name][]" %><b id='filen0' style=" color: red;"></b> </li>
+  <li> Price of the Image<%= text_field_tag "artist_image_list[price][]" %><b id='price0' style=" color: red;"></b> </li><br/>
+              
+  <li>MediumImage<%= file_field_tag "artist_image_list[file_name][]" %><b id='filen1'style=" color: red;"></b> </li>
+  <li> Price of the Image<%= text_field_tag "artist_image_list[price][]"%><b id='price1'style=" color: red;"></b> </li><br/>
+              
+  <li>LargeImage<%= file_field_tag "artist_image_list[file_name][]" %><b id='filen2'style=" color: red;"></b> </li>
+  <li> Price of the Image<%= text_field_tag "artist_image_list[price][]"%> <b id='price2'style=" color: red;"></b> </li><br/>
+              
+            </ul>
+          </div>
+        </div>
+
+        <div class="button_im" style ="margin-left: 300px;">
+          <%=button_to "Upload" %>
+        </div>
+        <div class="boxsimply1">
+          <div class="newuser1"></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

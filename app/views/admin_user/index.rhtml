@@ -1,0 +1,9 @@
+<div id ="login"style ="border:2px solid black;margin-top:300px;width:400px;height: 200px;margin-left: 300px;">
+  <% form_for :administrator, @administrator, :url => {:action => "login"} do |u| %>
+    <ul style ="list-style-type: none;">
+      <li > AdminMail:<%= u.text_field :email %></li>
+      <li > Password :<%= u.password_field :password %></li><br/>
+      <li > <%= submit_tag  'Login' %></li><li style ="margin-left:70px;margin-top: -24px;"><%= button_to  'Cancel',:action => "" %></li>
+    </ul>
+  <%end%>
+</div>

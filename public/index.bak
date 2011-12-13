@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+//edit just to create new branch
+
+</beginning of header section>
+<head>
+<SCRIPT TYPE="text/javascript">
+
+//Disable right click script
+//visit http://www.rainbow.arch.scriptmania.com/scripts/
+var message="Sorry, right-click has been disabled";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+// 
+</SCRIPT>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="description" content="Cherry Branch Art Gallery">
+<meta name="keywords" content="Cherry, Cherry Valley, Cherry Branch, Art, Gallery, Kristen Henderson">
+
+<!add keywords for crawler credentials>
+
+<title>Cherry Branch Gallery</title>
+
+<!Dreamweaver style sheet - for 2 columns>
+<link rel="stylesheet" href="stylesheets/2col_leftNav.css" type="text/css">
+<link rel="stylesheet" href="stylesheets/indiv.css" type="text/css">
+<style type="text/css">
+</style>
+<link rel="stylesheet" href="stylesheets/backbox.css" type="text/css" />
+<script type="text/javascript" src="js/prototype.compressed.js"></script>
+<script type="text/javascript" src="js/scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+<script type="text/javascript" src="js/dhtmlHistory.js"></script>
+<script type="text/javascript" src="js/customsignsheader.js"></script>
+</head>
+
+<!beginning of body section>
+<body>
+
+<! beginning masthead >
+<div id="masthead"><span class="style1"></span>
+  <h1 class="style6" id="siteName" align="center"><img src="CBG Signforweb2.jpg" width="385" height="54"></h1><div class="style8 style19" id="globalNav">
+<div class="style19" align="center">25 Main Street, Cherry Valley, NY 13320 | Ph. 607-264-9530 | info@cherrybranchgallery.com | Hours: Weds-Sun. 12pm-5pm </div>
+</div>
+</div>
+
+<!-- end masthead -->
+
+<content>
+<div id="content">
+  
+<! beginning table >
+<div id="table"></div>
+<table width="800" border="1">
+
+<! style sheet for individual artists>
+<div class="style2" color:#000000>
+
+<tbody>
+<!first row>
+<tr>
+<class="style1" color:#C0C0C0>
+ <td width="241" align="center"><strong><figure><a href="HH individual.html"><fig caption><strong>Hayley Hara<img src="images/HH0011.jpg"  width="240" height="160" border="0"></fig caption></figure></a></td>
+ <td><div align="center"><strong><figure><a href="bb.html"><fig caption>Brig Brown<img src="images/BB 8.jpg" width="240" height="160" border="0"></fig caption></figure></a></div></td>
+ <td><div align="center"><strong><figure><a href="brpho.html"><fig caption>Brad Rickerby<img src="images/BR26.jpg" width="240" height="160"></fig caption></figure></a></div></td>
+</tr>
+
+ </tr>
+<! 2nd row> 
+ <tr>
+ <td><div align="center"><strong><figure><a href="bb.html"><fig caption><strong>Brig Brown<img src="images/BB 00.jpg" width="240" height="160" border="0"></fig caption></figure></a></div></td>
+
+<td><div align="center"><strong><figure><a href="cah.html"><fig caption>Carol Ann Henderson<img src="images/cah18.jpg" width="240" height="160" border="0"></fig caption></figure></a></div></td>
+ <td><div align="center"><strong><figure><a href="http://jenn.fineartstudioonline.com"><fig caption>Jennifer Louise Smith<img src="images/jls01.JPG" width="240" height="160"></fig caption></figure></a></div></td>
+</tr>
+<! 3rd row>
+<tr>
+<td> <div align="center"><strong><figure><a href="km.html"><fig caption>Kathy Minnig<img src="images/KM35.jpg" width="240" height="160"></fig caption></figure></a></div></td>
+
+ <td><div align="center"><strong><figure><a href="mr.html"><fig caption> Mike "Ryno" Ryan<img src="images/Ryno 17.jpg" width="240" height="160" border="0"></fig caption></figure></a></div></td>
+
+ <td><div align="center"><strong><figure><a href="http://kimikofujimura.com"><fig caption>Kimiko Fujimura<img src="images/Kimiko Fujimura/kf04.jpg" width="240" height="160"></fig caption></figure></a></div></td>
+</tr>
+
+
+<! 4th row>h
+ <tr><td><div align="center"><strong><figure><a href="ls.html"><fig caption>Linda Smyth<img src="images/LS 9.jpg" width="180" height="230" border="0"></fig caption></figure></a></p></div></td>
+
+ <td><div align="center"><strong><figure><a href="cah.html"><fig caption>Carol Ann Henderson<img src="images/cah08.jpg" width="180" height="230" border="0"></fig caption></figure></a></p></div></td>
+
+<td><div align="center"><strong><figure><a href="pl.html"></a><a href="pl.html"><fig caption>Pam Livingston<img src="images/pl3.jpg" width="180" height="230" border="0"></fig caption></figure></a></div></td>
+  </tr>
+<! 5th row> 
+ <tr>
+ <td><div align="center"><strong><figure><a href="ks2.html"><fig caption>Kim Schneider<img src="images/ks63.jpg" width="240" height="160" border="0"></fig caption></figure></a></span></div></td>
+<td><div align="center"><strong><figure><a href="em.html"><fig caption>Ed McDaniel<img src="images/EM 17.jpg" width="240" height="160" border="0"></fig caption></figure></a></div></td>
+<td><div align="center"><strong><figure><a href="pl.html"><fig caption>Pam Livingston<img src="images/pl5.jpg" width="240" height="160"></fig caption></figure></a></div></td>
+</tr>
+<!6th row>
+<tr>
+ <td><div align="center"><strong><figure><a href="kab.html"><fig caption>Kristen Henderson<img src="images/kh5.jpg" width="240" height="160"></fig caption></figure></a></div></td>
+<td><div align="center"><strong><figure><a href="http://nectarhillsfarm.com"><fig caption>Sonia Sola<img src="images/ss01.jpg" width="240" height="160" border="0"></fig caption></figure></a></div></td> 
+<td><div align="center"><strong><figure><a href="JK.html"><fig caption>Jonathon Kimbrell<img src="images/JK020.jpg" width="240" height="160" border="0"></a></strong></span></div></td>
+
+</tr>
+<! 7th row>
+<tr>
+<td><div align="center"><strong><figure><a href="em.html"><fig caption>Ed McDaniel<img src="images/EM 6.JPG" width="180" height="230" border="0"></fig caption></figure></a></div></td>
+<td><div align="center"><strong><figure><a href="dl-vis.html"><fig caption>David Leo<img src="images/dl26.jpg" width="180" height="230" border="0"></fig caption></figure></a></div></td>
+ <td><div align="center"><strong><figure><a href="ls.html"><fig caption>Linda Smyth<img src="images/LS 5.jpg" width="180" height="230" border="0"></fig caption></figure></a></div></td>
+</tr>
+<!8th row>
+<tr>
+<td><div align="center"><strong><figure><a href="KH.html"><fig caption>Kristen Henderson<img src="images/kh27.jpg" width="180" height="230"></fig caption></figure></a></div></td>
+<td><div align="center"><strong><figure><a href="km.html"><fig caption>Kathy Minnig<img src="images/km33.JPG" width="180" height="230"></fig caption></figure></a></div></td>
+<td><div align="center"><strong><figure><a href="http://kimikofujimura.com"><fig caption>Kimiko Fujimura<img src="images/kf02.jpg" width="180" height="230"></fig caption></figure></a></div></td>
+</tr>
+<! end table> 
+</tbody></table>
+ <p class="style2">
+ </p></div>
+<!--end content -->
+<div class="style21" align="center">Welcome to <a href="contact.html"> The Cherry Branch Gallery </a> where the work of established and emerging artists is represented for the benefit of art enthusiasts, serious collectors and creative gift buyers!  In addition to an ever changing inventory of fine art and crafts, we are very pleased to announce the  <a href="gallerynews.html">Upcoming Shows</a> for which we hope you join us. We encourage you to browse our collection on our website, purchase online, and come visit our <a href="favpl.html"> Favorite Places</a> in and around village of Cherry Valley.  
+<p>
+<p> For landscape enthusiasts, check out our fine <a 
+href="landscape.html"> Local Artists</a> <p>
+<p> for our Facebook Friends check out
+<!-- Facebook Badge START --><a href="http://www.facebook.com/people/Cherry-Branch/100001035648285" target="_TOP" style="font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Cherry Branch">Cherry Branch</a><span style="font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 16px; font-variant: normal; font-style: normal; font-weight: normal; color: #555555; text-decoration: none;"> | </span><a href="http://www.facebook.com/badges/" target="_TOP" style="font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Make your own badge!">Create Your Badge</a><br/><a href="http://www.facebook.com/people/Cherry-Branch/100001035648285" target="_TOP" title="Cherry Branch"><img src="http://badge.facebook.com/badge/100001035648285.2169.1196641579.png" width="197" height="84" style="border: 0px;" /></a><!-- Facebook Badge END -->
+<div class="relatedLinks">
+    <p align="left"><div style="border:1px solid black;"></div><span class="style21">&quot;It has bothered me all my life that I do not paint like everybody else.&quot;<br />
+  -- Henri Matisse</span>  
+    <p>&nbsp;</p>
+</div>
+Thank you!
+
+
+<div align="center"><strong><span class="style22">
+<span class="style23"><a href="gallerynews.html">Gallery News |</a></span>
+<span class="style23"><a href="contact.html"> Contact Us |</a></span>
+<span class="style23"><a href="privacypolicy.html"> Privacy Policy | </a></span>
+<p>
+<span class="style22">\A92011 cherrybranchgallery.com </span></a></p></span>
+</a>
+</div>
+</body></html>

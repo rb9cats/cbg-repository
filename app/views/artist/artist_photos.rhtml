@@ -1,0 +1,11 @@
+<%= "All images of" %>&nbsp;<%=  @artist_photo.name.upcase %><br /><br />
+<% @artist_imgs.each do |b| %>
+  <%= link_to image_tag (b.artist_photo_medium),:action =>:artist_size_photos,:id=>b.artist_image_id %><br /><br />
+<%end%>
+
+<div>
+  <%= will_paginate @artist_imgs, {:container => false} %>
+  <div>
+    <%= page_entries_info @artist_imgs,:entry_name =>"images" %>
+  </div>
+</div>

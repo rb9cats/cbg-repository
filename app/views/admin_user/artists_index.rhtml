@@ -1,0 +1,35 @@
+<table border="2px solid black;">
+  <tr>
+  <td><b> S.No </b> </td>
+  <td><b> Name </b> </td>
+    <td><b> Description</b>  </td>
+    <td><b> Edit</b>   </td>
+    <td> <b>Delete</b>  </td>
+
+  </tr>
+   <%  @artists.each_with_index do  |artist,index| %>
+
+    <tr>
+      <td> <%= index+1%> </td>
+
+    
+
+      <td>
+        <%=  artist.name%>
+      </td>
+      <td>
+        <%=  artist.description%>
+      </td>
+      <td> <%= link_to "Edit",:action => "edit_artist",:id => artist.id %>       </td>
+      <td> <%= link_to "Delete", {:action => 'delete_artist', :id => artist.id},:confirm => "Are you sure you want to delete?" %></td>
+    </tr>
+  <%end%>
+</table>
+<div>
+  <%= will_paginate @artists, {:container => false} %>
+  <div>
+    <%= page_entries_info @artists,:entry_name =>"artists" %>
+  </div>
+</div>
+
+<%= link_to "New Artist",:action => "create_artist" %>

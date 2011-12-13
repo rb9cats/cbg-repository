@@ -1,0 +1,15 @@
+
+<% if @user && !@user.errors.blank? %><div style ="color:red;border: 2px black solid;margin-top:20px;width:350px;height: 180px;margin-left: 300px;"><%= @error_str %></div><% end %>
+<div style ="border:2px solid black;margin-top:200px;width:600px;height: 380px;margin-left: 300px;">
+  <% form_for :user, @user, :url => {:action => 'create_account'} do |u| %>
+    <ul style ="list-style-type: none;">
+      <li><label>First Name:<label style ="color:red">*</label></label><%= u.text_field :first_name %></li><br/>
+      <li><label>Last Name:<label style ="color:red">*</label></label><%= u.text_field :last_name %></li><br/>
+      <li><label>Email - Id : <label style ="color:red">*</label></label><%= u.text_field :email %></li><br/>
+      <li><label>UserName :<label style ="color:red">*</label></label><%= u.text_field :username %></li><br/>
+      <li><label>Password :<label style ="color:red">*</label></label><%= u.password_field :password %></li><br/>
+      <li style ="margin-left:200px;"><%= submit_tag "Save" %>&nbsp;&nbsp;<%= link_to "Back", :action =>'index' %></li>
+      <li><label style ="color:red">*</label>Fields are Mandatory</li>
+    </ul>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<div>
+  <% form_for :artist, @artist, :url => {:action => 'edit_artist',:id => @artist.id} do |u| %>
+    <%= error_messages_for :artist , :header_message => "", :message => "" %>
+    <%if flash[:error]%> <div style ="color:black;margin-left: 40px;"> <%=  flash[:error]%><% flash.clear %></div><%end%>
+    <div style ="border:2px solid black;margin-top:200px;width:600px;height: 380px;margin-left: 300px;">
+      <ul style ="list-style-type: none;">
+        <li><label>Artist Name:<label style ="color:red">*</label></label><%= u.text_field :name %></li><br/>
+        <li><label>Description:</label><%= u.text_field :description %></li><br/>
+        <li style ="margin-left:150px;"><%= submit_tag "Update" %>&nbsp;&nbsp;<%= link_to "Back", :action =>'artists_index' %>&nbsp;&nbsp;<%= link_to "Add image",:action=>"add_photos",:artist_id =>@artist.id%></li>
+        <%#*<li><label style ="color:red">*</label>FIelds are Mandatory</li>%>
+      </ul>
+      <% @artist_imgs.each do |b| %>
+       <%=link_to  image_tag (b.artist_photo_small,:title=>"Change Image",:size=>"100x100"),:action=>"edit_image",:id=>b.artist_image_id %>
+      <%end%>
+    </div>
+  <%end%>
+</div>

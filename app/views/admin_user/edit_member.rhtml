@@ -1,0 +1,17 @@
+<div>
+  <% form_for :user, @user, :url => {:action => 'edit_member',:id => @user.id} do |u| %>
+    <%= error_messages_for :user , :header_message => "", :message => "" %>
+    <%if flash[:error]%> <div style ="color:black;margin-left: 40px;"> <%=  flash[:error]%><% flash.clear %></div><%end%>
+    <div style ="border:2px solid black;margin-top:200px;width:600px;height: 380px;margin-left: 300px;">
+      <ul style ="list-style-type: none;">
+        <li><label>First Name<label style ="color:red">*</label></label><%= u.text_field :first_name %></li><br/>
+        <li><label>Last Name<label style ="color:red">*</label></label><%= u.text_field :last_name %></li><br/>
+        <li><label>Email Id <label style ="color:red">*</label></label><%= u.text_field :email,:read_lnly =>true %></li><br/>
+        <li><label>UserName<label style ="color:red">*</label></label><%= u.text_field :username %></li><br/>
+        <li><label>Password</label><%= password_field_tag :password %></li><br/>
+        <li style ="margin-left:200px;"><%= submit_tag "Save" %>&nbsp;&nbsp;<%= link_to "Back", :action =>'member_index' %></li>
+        <li><label style ="color:red">*</label>Fields are Mandatory</li>
+      </ul>
+    </div>
+  <%end%>
+</div>

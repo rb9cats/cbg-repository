@@ -1,0 +1,14 @@
+<% if flash[:message]%><div style="color:#ff0000;" align="center"><%= flash[:message] %> .</div><% end %>
+<div id ="login"style ="border:2px solid black;margin-top:300px;width:400px;height: 200px;margin-left: 300px;">
+  <% form_for :user, @user, :url => {:action => "login"} do |u| %>
+    <div style ="margin-left:300px;"><%= link_to :NewUser ,:action => "signup" %></div>
+    <ul style ="list-style-type: none;">
+      <li > UserMail : <%= u.text_field :email %></li>
+      <li > Password: <%= u.password_field :password %></li><br/>
+      <li > <%= submit_tag  'Login' %></li><li style ="margin-left:70px;margin-top: -24px;">
+        <%= button_to  'Cancel',:action => "" %><br />&nbsp;&nbsp;
+        <%= link_to "Forgot Password",:controller=>"user",:action=>"forgot_password"%>
+      </li>
+    </ul>
+  <%end%>
+</div>

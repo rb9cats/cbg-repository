@@ -1,0 +1,16 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<%= javascript_include_tag 'files' %>
+<div style ="border:2px solid black;margin-top:200px;width:600px;height: 200px;margin-left: 300px;">
+  <% form_for :artist, @artist, :url => {:action => 'create_artist'} do |u| %>
+    <%= error_messages_for :artist , :header_message => "", :message => "" %>
+    <ul style ="list-style-type: none;">
+      <li><label>Artist Name<label style ="color:red">*</label></label><%= u.text_field :name %></li><br/>
+      <li><label>Description</label><%= u.text_area :description, :rows => "2", :cols =>"27"  %></li><br/>
+      <li style ="margin-left:200px;"><%= button_to "Save" %></li>
+      <!--<li><label style ="color:red">*</label>FIelds are Mandatory</li>-->
+    </ul>
+  <% end %>
+</div>

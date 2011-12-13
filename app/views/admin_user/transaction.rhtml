@@ -1,0 +1,40 @@
+
+
+<%= "Transactions of all orders" %><br /><br />
+
+<% if !@orders.blank? %>
+  <table border="2px solid black;">
+    <tr>
+      <td> Card Holder </td>
+    <td> User Name </td>
+      <td> Image Name </td>
+      <td> Image Type</td>
+      <td> Price  </td>
+     <td> Artist Name  </td>
+      <td> Purchase Date  </td>
+      <td> Transacion id  </td>
+    </tr>
+    <%  @orders.each do |order|%>
+    <% ord_trans = order.order_transactions%>
+
+      <tr>
+        <td><%= order.first_name %></td>
+       <td><%= order.user.first_name %></td>
+        <td><%= order.artist_image_name %></td>
+        <td>
+          <% trans = order.order_transactions%>
+          <% if !trans.blank? %>
+            <%  trans.each do |tran|   %>
+              <%=tran.image_type%>
+            <%end%>
+          <%end%>
+        </td>
+        <td><%= order.total_price %></td>
+
+        <% if !(order.artist.name.blank?) %><td><%= order.artist.name %></td><%end%>
+        <td><%= order.created_at.strftime("%b %d %Y %I:%M %p") %></td>
+        <td><%= order.transaction_id %></td>
+      </tr>
+    <%end%>
+  </table>
+<%end%>

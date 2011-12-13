@@ -1,0 +1,15 @@
+<% if flash[:message]%><div style="color:#008000;" align="left"><%= flash[:message] %>.</div><% end %>
+  <% @lists.each do |l| %>
+    <%= l.artist_image.artist.name.upcase %><br />&nbsp;
+    
+ <%= link_to image_tag(l.artist_photo_medium),:action =>:artist_photos,:id=>l.artist_image.artist_id %>
+<br /><br />
+  <%end%>
+
+
+<div>
+  <%= will_paginate @lists, {:container => false} %>
+  <div>
+    <%= page_entries_info @lists,:entry_name =>"artists" %>
+  </div>
+</div>

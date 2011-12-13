@@ -1,0 +1,45 @@
+<table border="2px solid black;">
+  <tr>
+    <td><b> S.No </b> </td>
+    <td><b>      First Name</b></td>
+    <td><b>      Last Name</b></td>
+    <td><b>      Email</b></td>
+    <td><b>     User Name</b></td>
+    <td><b>     Created Date</b></td>
+    <td><b>     Edit </b></td>
+    <td><b>     Delete </b></td>
+  </tr>
+  
+  <%  @user_list.each_with_index do  |userlist,index| %>
+  
+    <tr><td>
+      <%= index+1%>
+      </td>
+      <td>
+        <%=  userlist.first_name%>
+      </td>
+      <td>
+        <%=  userlist.last_name%>
+      </td>
+      <td>
+        <%=  userlist.email%>
+      </td>
+      <td>
+        <%=  userlist.username%>
+      </td>
+      <td>
+        <%=  userlist.created_at.strftime('%m-%d-%Y')%>
+      </td>
+       <td>  <%= link_to "Edit",:action => "edit_member",:id => userlist.id %>       </td>
+      <td>  <%= link_to "Delete", {:action => 'delete_member', :id => userlist.id},:confirm => "Are you sure you want to delete?" %></td>
+    </tr>
+  
+    <%end%>
+</table>
+<div>
+  <%= will_paginate @user_list, {:container => false} %>
+  <div>
+    <%= page_entries_info @user_list,:entry_name =>"users" %>
+  </div>
+</div>
+

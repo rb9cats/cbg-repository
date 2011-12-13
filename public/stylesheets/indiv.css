@@ -1,0 +1,33 @@
+<DIV align="center"><SPAN id="header"></SPAN></DIV>
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h5></h5>
+
+body{
+        font-family: Arial,sans-serif;
+        color: #000000;
+        line-height: 1.166;     
+        margin: 0px;
+        padding: 0px;
+	background-color: #D1D1D1;
+}
+
+table{
+	background-color: #000000;
+}
+#lightbox{
+	background-color:#eee;
+	padding: 10px;
+	border-bottom: 2px solid #666;
+	border-right: 2px solid #666;
+	}
+#lightboxDetails{
+	font-size: 0.8em;
+	padding-top: 0.4em;
+	}	
+#lightboxCaption{ float: left; }
+#keyboardMsg{ float: right; }
+
+#lightbox img{ border: none; } 
+#overlay img{ border: none; }

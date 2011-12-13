@@ -1,0 +1,32 @@
+<%= "Transaction History of " %> <%= @user_name.upcase %><br /><br />
+<% if !@orders.blank? %>
+  <table border="2px solid black;">
+    <tr>
+      <td><b> Image Name</b> </td>
+      <td><b> image Type<b></td>
+      <td><b> Price</b>  </td>
+      <td><b> Artist Name</b>  </td>
+      <td><b> Purchase Date</b>  </td>
+      <td><b> Transacion id </b> </td>
+    </tr>
+    <%  @orders.each do |one_order|%>
+      <tr>
+        <td><%= one_order.artist_image_name %></td>
+        <td>
+          <% trans = one_order.order_transactions%>
+          <% if !trans.blank? %>
+            <%  trans.each do |tran|   %>
+              <%=tran.image_type%>
+            <%end%>
+          <%end%>
+        </td>
+        <td><%= one_order.total_price %></td>
+        <td><%= one_order.artist.name %></td>
+        <td><%= one_order.created_at.strftime("%b %d %Y") %></td>
+        <td><%= one_order.transaction_id %></td>
+      </tr>
+    <%end%>
+  </table>
+<%end%>
+
+

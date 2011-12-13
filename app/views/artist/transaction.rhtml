@@ -1,0 +1,67 @@
+
+<div>
+  <b><%=" Artist Name: "%><%=@artist_img.artist.name.upcase%></b><br /><br />
+  <b><%= "your cart is having" %></b>&nbsp;<br /><br />
+  <%if !@small_image_price.blank?%>
+    &nbsp;&nbsp;<%="Small Image: $"%>&nbsp;<%=@small_image_price.price%>
+    <%@small_id=1%>
+  <%end%>
+  <%if !@medium_image_price.blank?%>
+    &nbsp;&nbsp;<%="Medium Image: $"%>&nbsp;<%=@medium_image_price.price%>
+    <%@medium_id=1%>
+  <%end%>
+  <%if !@large_image_price.blank?%>
+    &nbsp;&nbsp;<%="Large Image: $"%>&nbsp;<%=@large_image_price.price%><br/><br />
+    <%@large_id=1%>
+  <%end%>
+
+</div>
+
+<% if flash[:message]%><div style="color:#ff0000;" align="left"><%= flash[:message] %>.</div><% end %>
+
+
+<% form_for :order,@order,:url=>{:action=>"buy_photos",:id=>@artist_img.id,:small=>@small_id,:medium=>@medium_id,:large=>@large_id},:html => {:method => "post"} do |f| %>
+<p style="color:#DAA520;"><%= "All fields are mandatory" %></p>
+  <p>
+    <%="Total price: $"%><br />
+    <%= text_field_tag :total_amount,@total,:readonly => true %>
+  </p>  
+  <p>
+    <%= f.label :first_name,"First Name" %><br />
+    <%= f.text_field :first_name %>    
+  </p>
+  <p>
+    <%= f.label :last_name,"Last Name"%><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :card_type,"Card Type" %><br />
+    <%= f.select :card_type, [["select type"],["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %>
+  </p>
+  <p>
+    <%= f.label :card_number,"Card Number" %><br />
+    <%= f.text_field :card_number %>
+  </p>
+  <p>
+    <%= f.label :card_verification_number, "Card Verification Value (CVV)" %><br />
+    <%= f.text_field :card_verification_number %>
+  </p>
+  <p>
+    <%= f.label :card_expires_on,"Card Expires On" %><br />
+    <%= select_month(@month.to_i, :add_month_numbers => true,:prompt => "Select month") %>
+    <%= select_year(@year.to_i, :start_year =>  Date.today.year, :end_year => (Date.today.year+10),:prompt => "Select year")  %>
+  </p>
+  <p><%= f.submit "Submit" %>
+  
+  <%= f.submit  "Cancel",:type=>"reset"%>
+    
+  </p>
+
+   
+<% end %>
+
+
+
+
+
+

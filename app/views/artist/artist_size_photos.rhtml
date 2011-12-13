@@ -1,0 +1,17 @@
+<%= "Image Name:" %>&nbsp;&nbsp;<%=  @artist_photo.name%><br />
+<%= "Description:" %>&nbsp;&nbsp;<%=  @artist_photo.description%><br /><br />
+
+<% if flash[:message]%><div style="color:#ff0000;" align="left"><%= flash[:message] %>.</div><% end %>
+<% form_tag (:controller=>"artist",:action => "transaction",:id =>@artist_photo.id) do-%>
+<%= "SmallImage:" %><br /><%= image_tag (@artist_all_img1.artist_photo_small) %><br />&nbsp;<% if !session[:admin_user_id] %><input id="small_image_id" name="small_image" type="checkbox" value="1" /><%end%>&nbsp;<%= "Price: $" %>&nbsp;<%=@artist_all_img1.price%><br /><br />
+<%= "MediumImage:" %><br /><%= image_tag (@artist_all_img2.artist_photo_medium) %><br />&nbsp;<% if !session[:admin_user_id] %><input id="medium_image_id" name="medium_image" type="checkbox" value="1" /><%end%>&nbsp;<%= "Price: $" %><%=@artist_all_img2.price%><br /><br />
+<%= "LargeImage:" %><br /><%= image_tag (@artist_all_img3.artist_photo_large) %><br />&nbsp;<% if !session[:admin_user_id] %><input id="large_image_id" name="large_image" type="checkbox" value="1" /><%end%>&nbsp;<%= "Price: $" %>&nbsp;<%=@artist_all_img3.price%><br /><br />
+<% if !session[:admin_user_id] %>
+<%= submit_tag "Add to cart" %>
+<%end%>
+<%end%>
+
+
+
+
+
