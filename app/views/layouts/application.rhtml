@@ -4,9 +4,11 @@
   </head>
   <body>
     <div style="margin-left: 600px;">&nbsp;&nbsp;&nbsp;&nbsp;
-      <%#if params[:action] != 'main' and !params[:controller] != 'artist'%>
-        <%= link_to "Dashboard", :action => 'main',:controller => "artist"  %>
-      <%#end%>
+     <%#if params[:action] != 'main' and !params[:controller] != 'artist'%>
+        <%= link_to "Home", :action => 'home',:controller => "pages"  %>
+        <%= link_to "About Us", :action => 'about',:controller => "pages"  %>     
+      <%= link_to "Dashboard", :action => 'main',:controller => "artist"  %>
+     <%#end%>
       <%if !session[:user_id] and !session[:admin_user_id] %>
         <%= link_to "User", :action => 'index',:controller => "user"  %>
         <%= link_to "Admin", :action => 'index',:controller => "admin_user"  %>
@@ -14,12 +16,13 @@
       <%if session[:admin_user_id] %>
         <%= link_to "Users", :action => 'member_index',:controller => "admin_user"  %>
         <%= link_to "Artists", :action => 'artists_index',:controller => "admin_user"  %>
-        <%= link_to "Transaction", :action => 'transaction',:controller => "admin_user"  %>
+        <%= link_to "Transactions", :action => 'transaction',:controller => "admin_user"  %>
         <%= link_to "Logout", :action => 'logout',:controller => "admin_user" %>
       <%end%>
+
       <% if session[:user_id] %>
         <%= link_to "Edit Profile",:controller =>"user", :action => "edit_profile",:id => session[:user_id] %>
-        <%= link_to "Transactions History",:action=>"transaction_history",:id => session[:user_id] %>
+        <%= link_to "Transactions",:controller =>"user",:action=>"transaction_history",:id => session[:user_id] %>
         <%= link_to "Logout", :action => 'logout',:controller => "user" %>
       <%end%>
     </div>

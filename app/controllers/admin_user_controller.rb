@@ -49,7 +49,7 @@ class AdminUserController < ApplicationController
   end
 
   def artists_index
-    @artists = Artist.all.paginate :page => params[:page], :per_page => 10
+    @artists =Artist.find(:all,:conditions=>["active = ?",true]).paginate :page => params[:page], :per_page => 10
   end
 
   
@@ -155,11 +155,14 @@ class AdminUserController < ApplicationController
 
   def delete_artist
     @artist = Artist.find(params[:id])
-    if Artist.destroy(@artist.id)
-      flash.now[:messgae] = "#{@artist.name} is Deleted"
+    if !@artist.blank?
+      @artist.active = false
+      @artist.save      
       redirect_to :action => "artists_index"
+      flash[:messgae] = "#{@artist.name} is deactivated"
     end
   end
+  
 
   def create_artist
     @artist = Artist.new(params[:artist])
